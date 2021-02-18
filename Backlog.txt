@@ -1,0 +1,38 @@
+Features:
+
+- As a user I want to be able to search images (Done)
+- As a user I want to be able to save an image to favorites (In progress)
+- As a user I want to see all my favorite images
+- As a user I want to remove an image from favorites
+
+
+-postman
+
+
+
+
+- As a user I want to be able to search images [9h]
+    > Set up react router (Done)
+    > Create empty react components (Done)
+    > Set up Material UI (Done)
+    > Create landing page in react [7h]  (Done) (Initial estimate: 3/2h)
+    > Set up Unsplash API [1/2h] - https://github.com/do-community/react-photo-search (Done)
+    > Set up redux [1/3h] (Done) 
+    > Create cards to show images [1/2h] (Done)
+    > Create search bar to send requests [1h] (Done)
+
+- As a user I want to be able to save an image to favorites 
+    > Save image ids to local storage (Done)
+    > Change favorite icon if the image is favorite (Done)
+    
+- As a user I want to see all my favorite images
+    > Create page with all favorites images
+
+- As a user I want to remove an image from favorites
+    > If I press the favorite icon again, the image is no longer favorite (Done)
+
+
+    sa rezolv bug
+    sa ma int de librarie
+    public codul
+    setup app nou si redux

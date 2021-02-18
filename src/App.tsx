@@ -1,26 +1,42 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { ReactElement } from 'react';
+import { Switch, Route, BrowserRouter } from 'react-router-dom';
+import Landing from './Landing';
+import Favourites from './Favourites';
+import Page404 from './Page404';
+import SearchResult from './SearchResult';
+import './App.css'
+import { createApi } from 'unsplash-js';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+interface Props {
+  
 }
 
-export default App;
+
+export const api = createApi({
+  accessKey: "msWkT_7M07VSZo2rv-sFioPOeuQYQlHgEVCxfO5Bd0M",
+});
+
+
+export default function App({}: Props): ReactElement {
+  return (
+    <BrowserRouter>
+      <Switch>
+        {/* <div className = 'background-landing'> */}
+        <Route path = '/' exact>
+          <Landing />
+        </Route>
+        {/* </div> */}
+        <Route path = "/favourites" exact>
+          <Favourites />
+        </Route>
+        <Route path = "/searchResult" exact>
+          <SearchResult />
+        </Route>
+        <Route path = "*">
+          <Page404 />
+        </Route>
+      </Switch>
+    </BrowserRouter>
+  )
+}
+
