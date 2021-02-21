@@ -7,6 +7,7 @@ import { Theme, createStyles, makeStyles } from '@material-ui/core/styles';
 import {addImage, deleteImage} from '../../actions';
 import {useSelector, useDispatch} from 'react-redux';
 import StarIcon from '@material-ui/icons/Star';
+import { useEffect } from 'react';
 
 interface Props {
     image: any
@@ -49,6 +50,21 @@ export default function Image({image}: Props): ReactElement {
         else
             return <StarIcon />
     }
+
+    useEffect(() => {
+      let favourites = localStorage.getItem('favourites');
+      let ok = false;
+      favourites = JSON.parse(favourites || "");
+      if (favourites !== null) {
+        for(let i = 0; i < favourites.length; i++){
+          if(image.id === favourites[i]){
+            ok = true;
+          }
+        }
+      }
+    
+      setFavourite(ok);
+    }, [])
 
     return (
         

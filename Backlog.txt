@@ -34,5 +34,5 @@ Features:
 
     sa rezolv bug
     sa ma int de librarie
-    public codul
-    setup app nou si redux
+    public codul (bifat)
+    setup app nou si redux (bifat)
