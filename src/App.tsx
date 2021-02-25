@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react';
+import React, { ReactElement, useEffect } from 'react';
 import { Switch, Route, BrowserRouter } from 'react-router-dom';
 import Landing from './Landing';
 import Favourites from './Favourites';
@@ -18,6 +18,11 @@ export const api = createApi({
 
 
 export default function App({}: Props): ReactElement {
+
+  useEffect(() => {
+    localStorage.setItem('favourites', '');
+  }, [])
+
   return (
     <BrowserRouter>
       <Switch>

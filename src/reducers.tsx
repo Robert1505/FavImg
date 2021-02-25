@@ -22,7 +22,7 @@ export const imgReducer = (oldState = INITIAL_STATE, action) => {
       return [...action.payload];
     case "ADD_IMAGE":
          favoritesJSON = localStorage.getItem("favourites");
-        if (favoritesJSON != null) {
+        if (favoritesJSON !== null) {
           let ok = false;
            favorites = JSON.parse(favoritesJSON);
            for(let i = 0; i < favorites.length; i++){
@@ -36,8 +36,9 @@ export const imgReducer = (oldState = INITIAL_STATE, action) => {
            else{
              ok = false;
            }
-        } else {
-            localStorage.setItem('favourites', JSON.stringify([action.payload]));
+        } 
+        else {
+          localStorage.setItem('favourites', JSON.stringify([action.payload]));
         }
         return oldState;
     case "DELETE_IMAGE":
